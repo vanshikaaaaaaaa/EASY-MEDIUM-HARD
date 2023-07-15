@@ -1,0 +1,19 @@
+ int arraySign(vector<int>& nums) {
+        
+    int negCount = 0;
+    int zeroCount = 0;
+    for (int num : nums) {
+        if (num < 0) {
+            negCount++;
+        } else if (num == 0) {
+            zeroCount++;
+        }
+    }
+
+    if (zeroCount > 0) {
+        return 0;
+    } else if (negCount % 2 == 1) {
+        return -1;
+    } else {
+        return 1;
+    }
