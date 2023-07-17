@@ -1,0 +1,8 @@
+bool rotateString(string s, string goal) {
+          if(s.length() != goal.length()) return false;
+        s += s;
+        for(int i=0, len = goal.length(); i<len; i++){
+            if(s.substr(i, len) == goal)
+                return true;
+        }
+        return false;
