@@ -1,0 +1,18 @@
+class NumArray {
+private:
+    vector<int> cumulative_sum;
+
+public:
+    NumArray(vector<int>& nums) {
+        cumulative_sum.push_back(0); // Initialize the cumulative sum vector
+        int sum = 0;
+        for (int num : nums) {
+            sum += num;
+            cumulative_sum.push_back(sum);
+        }
+    }
+
+    int sumRange(int left, int right) {
+        return cumulative_sum[right + 1] - cumulative_sum[left];
+    }
+    }
